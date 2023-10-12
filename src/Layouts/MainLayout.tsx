@@ -1,22 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
+import Navbar from '../Components/Navbar/Navbar'
 
 function MainLayout() {
   return (
     <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Homepage</Link>
-            </li>
-            <li>
-              <Link to="/SortAlgo">Sorting Algorithms</Link>
-            </li>
-            <li>
-              <Link to="/PathFind">Pathfinding Algorithms</Link>
-            </li>
-          </ul>
-        </nav>
+       <Navbar />
+        <div>
+          
+          <Outlet />
+
+          
+        </div>
     </div>
   )
 }
