@@ -1,16 +1,18 @@
-import React from 'react'; 
+import React from "react";
 
 export const Sorting = () => {
-	return ( 
-    <div>
-        <h1>Sorting Algorithms</h1>
-        <ul>
-            <li>Bubble Sort</li>
-            <li>Merge Sort</li>
-            <li>Quick Sort</li>
-        </ul>
-    </div> 
-    );
-} 
+  const array = [1, 2, 3, 4, 5, 6, 7, 8];
+  return (
+    <div className="flex flex-center">
+      <div className="array-container">
+        {array.map((item, index) => (
+          <span key={index} className="a-box">
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Sorting;

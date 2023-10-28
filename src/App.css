@@ -1,0 +1,24 @@
+.flex {
+    display: flex;
+}
+
+.flex-center{
+    justify-content: center;
+}
+
+.a-box{
+    width: 40px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--primary-color);
+    border-right: none;
+    color: white;
+    font-weight: 800;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+   
+}
+.a-box:last-child {
+    border-right: 2px solid var(--primary-color);
+}
