@@ -6,12 +6,17 @@
     justify-content: center;
 }
 
+.flex-align-center{
+    height: 70vh;
+    align-items: center;
+}
+
 .a-box{
     width: 40px;
     height: 40px;
     background-color: var(--secondary-color);
-    border: 2px solid var(--primary-color);
-    border-right: none;
+    border: 1px solid var(--primary-color);
+    border-collapse: collapse;
     color: white;
     font-weight: 800;
     display: inline-block;
@@ -19,6 +24,21 @@
     line-height: 40px;
    
 }
-.a-box:last-child {
-    border-right: 2px solid var(--primary-color);
+
+
+.a-box:last-child , .a-box:first-child{
+    animation-name: swap;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes swap {
+    from{
+        transform: translate(0px, 0px);
+    }
+    to {
+        transform: translate(0px , -70px);
+    }
 }
