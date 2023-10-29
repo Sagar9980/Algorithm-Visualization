@@ -26,12 +26,7 @@
 }
 
 
-.a-box:last-child , .a-box:first-child{
-    animation-name: swap;
-    animation-duration: 500ms;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-}
+
 
 
 
