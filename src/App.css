@@ -34,11 +34,41 @@
 }
 
 
+
+
+.pointer-container{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.a-pointer{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-top: 10px;
+    background-color:red;
+    animation: traverse 5s  steps(7) forwards;
+
+}
+
+
+
 @keyframes swap {
     from{
         transform: translate(0px, 0px);
     }
     to {
         transform: translate(0px , -70px);
+    }
+}
+
+@keyframes traverse {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(280px);
     }
 }

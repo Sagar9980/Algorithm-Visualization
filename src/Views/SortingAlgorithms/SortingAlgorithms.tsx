@@ -10,6 +10,9 @@ export const Sorting = () => {
             {item}
           </span>
         ))}
+        <div className="pointer-container">
+          <span className="a-pointer"></span>
+        </div>
       </div>
     </div>
   );
