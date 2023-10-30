@@ -6,18 +6,26 @@ function Navbar() {
   return (
     <div>
          <nav>
+          <div className="top">
+          <Link to="/" className='home'><p className="av">Algorithm <br />Visualization</p></Link>
+          </div>
+          <div className="search">
+            <button className='searchbtn'>Sea</button>
+          </div>
+          <div className="settings">
+            <button className='settingsbtn'>Set</button>
+          </div>
 
-<ul>
+<ul className="navbar" >
   <li>
-    <Link to="/">Homepage</Link>
+    <Link to="/sorting" className='link'>Sorting Algorithms</Link>
   </li>
+  <li className='link'>Searching Algorithms</li>
   <li>
-    <Link to="/sorting">Sorting Algorithms</Link>
-  </li>
-  <li>
-    <Link to="/pathfind">Pathfinding Algorithms</Link>
+    <Link to="/pathfind" className='link'>Pathfinding Algorithms</Link>
   </li>
 </ul>
+
 </nav>
     </div>
   )

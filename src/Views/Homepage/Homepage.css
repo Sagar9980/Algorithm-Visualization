@@ -1,0 +1,58 @@
+.body{
+    background-color: #BEBEBE;
+}
+.paragraph{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 290px;
+    left: 340px;
+    
+}
+.get{
+    color: #008083;
+    font-size: 60px;
+    font-weight: 1000;
+    font: bold;
+    text-align: center;
+}
+.algo{
+    color: #F78104;
+    font-size: 60px;
+    font-weight: 1000;
+    font: bold;
+    text-align: center;
+}
+.start{
+    position: absolute;
+    bottom: 75px;
+    left: 550px;
+}
+.compare{
+    position: absolute;
+    bottom: 75px;
+    left: 800px;
+}
+.startbtn{
+    color: white;
+    background-color:#FD5901;
+    border: none;
+    height: 45px;
+    width: 200px;
+    border-radius:23px;
+    font-size: 17px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.comparebtn{
+    color: white;
+   background-color: #005F60;
+   border: none;
+   height: 45px;
+   width: 175px;
+   border-radius: 23px;
+   font-size: 17px;
+   font-weight: 900;
+   cursor: pointer;
+}
