@@ -1,25 +1,22 @@
-import React from 'react'; 
-import "../Homepage/Homepage.css";
+import React from "react";
+import "./Homepage.css";
+
 export const Home = () => {
-	return (
-        <>
-     <body>
-        <div className="paragraph">
-      <p className="get">Get better understanding of<br /> 
-      <span className="algo">ALGORITHMS </span> 
-        through <br />
-       <span className="algo">VISUALIZATION</span>. </p>
+  return (
+    <>
+      <div className="hero-text">
+        <p>
+          Get better understanding of <br />
+          <span>ALGORITHMS</span> through <br />
+          <span>VISUALIZATION.</span>
+        </p>
       </div>
-      <div className="start">
-        <button className="startbtn">Start Visualizing</button>
+      <div className="btns">
+        <div className="startbtn">Start Visualizing</div>
+        <div className="comparebtn">Compare</div>
       </div>
-      <div className="compare">
-        <button className="comparebtn">Compare</button>
-      </div>
-     </body>
-     
-     </>
-    );
-} 
- 
+    </>
+  );
+};
+
 export default Home;
