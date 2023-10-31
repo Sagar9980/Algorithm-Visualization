@@ -3,7 +3,7 @@ import React from "react";
 import Home from "../Views/Homepage/Homepage";
 import Sorting from "../Views/SortingAlgorithms/SortingAlgorithms";
 import Pathfind from "../Views/PathfindingAlgorithms/PathfindingAlgorithms";
-import MainLayout from "../Layouts/MainLayout";
+import SearchingAlgorithms from "../Views/SearchingAlgorithms/SearchingAlgorithms";
 
 export const MainRoute = createBrowserRouter([
   {
@@ -11,18 +11,16 @@ export const MainRoute = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/",
-    element: <MainLayout />,
-    children: [
-      {
-        path: "/pathfind",
-        element: <Pathfind />,
-      },
-      {
-        path: "/sorting",
-        element: <Sorting />,
-      },
-    ],
+    path: "/pathfind",
+    element: <Pathfind />,
+  },
+  {
+    path: "/sorting",
+    element: <Sorting />,
+  },
+  {
+    path: "/searching",
+    element: <SearchingAlgorithms />,
   },
 ]);
 
