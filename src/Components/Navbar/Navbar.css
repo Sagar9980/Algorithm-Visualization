@@ -1,0 +1,68 @@
+.navbar li{
+    display: inline;
+    padding: 15px 20px 15px 20px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #FD5901;
+    border-radius: 30px;
+    height: 60px;
+    width: 900px;
+    position: absolute;
+    top: 175px;
+    left: 315px;
+  
+}
+.home{
+    text-decoration: none;
+}
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.top{
+    position: absolute;
+    padding: 30px 40px 20px 30px;
+}
+.av{
+    color: #F78104;
+    font: bold;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+.search{
+    position: absolute;
+    top: 30px;
+    right: 140px;
+   
+}
+.settings{
+    position: absolute;
+    top: 30px;
+    right: 75px;
+    
+}
+.searchbtn{
+    color: white;
+    border: none;
+    background-color: #FD5901 ;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.settingsbtn{
+    color: white;
+    border: none;
+    background-color: #005F60;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
