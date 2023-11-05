@@ -1,17 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Navbar.css";
-import Dropdown from "../Dropdown/Dropdown";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <>
       <div className="nav">
         <div className="top-nav">
-          <a href="#">
+          <Link to='/'><a href="#">
             Algorithm <br />
             Visualization
-          </a>
+          </a></Link>
           <div className="btns">
             <div className="search-btn">
               <svg
@@ -53,7 +52,7 @@ function Navbar() {
       <div className="outer-bottom-nav">
         <div className="bottom-nav">
           <div className="sort">
-            <p>Sorting Algorithms</p>
+            <Link to='/sorting' className="links"><p>Sorting Algorithms</p></Link>
             <svg
               width="24"
               height="24"
@@ -74,7 +73,7 @@ function Navbar() {
           </div>
           <div className="divider"></div>
           <div className="search">
-            <p>Searching Algorithms</p>
+          <Link to='/searching' className="links"><p>Searching Algorithms</p></Link>
             <svg
               width="24"
               height="24"
@@ -95,7 +94,7 @@ function Navbar() {
           </div>
           <div className="divider"></div>
           <div className="pathfinding">
-            <p>Pathfinding Algorithms</p>
+            <Link to='/pathfind' className="links"><p>Pathfinding Algorithms</p></Link>
             <svg
               width="24"
               height="24"

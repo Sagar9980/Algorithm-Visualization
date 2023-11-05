@@ -7,6 +7,9 @@
   font-weight: 1000;
   line-height: 33px; /* 110% */
 }
+.links{
+  text-decoration: none;
+}
 .top-nav {
   display: flex;
   justify-content: space-between;
