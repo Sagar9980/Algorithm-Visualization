@@ -1,68 +1,70 @@
-.navbar li{
-    display: inline;
-    padding: 15px 20px 15px 20px;
+.top-nav a {
+  text-decoration: none;
+  color: var(--primary-color, #fd5901);
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: 33px; /* 110% */
 }
-.navbar{
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #FD5901;
-    border-radius: 30px;
-    height: 60px;
-    width: 900px;
-    position: absolute;
-    top: 175px;
-    left: 315px;
-  
+.links{
+  text-decoration: none;
 }
-.home{
-    text-decoration: none;
-}
-.link{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-weight: 300;
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
 }
 
-.top{
-    position: absolute;
-    padding: 30px 40px 20px 30px;
+.search-btn,
+.ham-btn {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  cursor: pointer;
 }
-.av{
-    color: #F78104;
-    font: bold;
-    font-size: 25px;
-    font-weight: 900;
-    line-height: 1.2;
-}
-.search{
-    position: absolute;
-    top: 30px;
-    right: 140px;
-   
-}
-.settings{
-    position: absolute;
-    top: 30px;
-    right: 75px;
-    
-}
-.searchbtn{
-    color: white;
-    border: none;
-    background-color: #FD5901 ;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
+.ham-btn {
+  background-color: var(--secondary-color);
+  margin-left: 10px;
 }
 
-.settingsbtn{
-    color: white;
-    border: none;
-    background-color: #005F60;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
+.outer-bottom-nav {
+  display: flex;
+  justify-content: center;
+}
+.bottom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background: var(--primary-color, #fd5901);
+}
+.divider {
+  width: 2px;
+  height: 40px;
+  background: #005f60;
+}
+.sort,
+.search,
+.pathfinding {
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 550;
+  line-height: normal;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.sort p,
+.search p,
+.pathfinding p {
+  color: #fff;
 }
