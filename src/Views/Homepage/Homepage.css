@@ -1,0 +1,49 @@
+body {
+  background-color: #e5f5f5;
+}
+
+.hero-text {
+  margin: 20px 0;
+}
+.hero-text p {
+  color: var(--secondary-color);
+  text-align: center;
+  font-family: Poppins;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.hero-text p span {
+  color: var(--primary-color);
+  font-family: Poppins;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: normal;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.startbtn,
+.comparebtn {
+  color: white;
+  background-color: #fd5901;
+  border: none;
+  height: 45px;
+  width: 200px;
+  border-radius: 23px;
+  font-size: 17px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 20px;
+}
+.comparebtn {
+  background-color: #005f60;
+}
