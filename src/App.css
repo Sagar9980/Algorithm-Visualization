@@ -17,7 +17,6 @@
     height: 40px;
     background-color: var(--secondary-color);
     border: 1px solid var(--primary-color);
-    border-collapse: collapse;
     color: white;
     font-weight: 800;
     display: inline-block;
@@ -33,21 +32,30 @@
 
 
 .pointer-container{
-    width: 40px;
-    display: flex;
-    justify-content: center;
+    position: relative;
 }
 
 .a-pointer{
-    display: block;
+    display: inline-block;
     width: 10px;
-    position: relative;
     height: 10px;
     border-radius: 50%;
     margin-top: 10px;
-    background-color:red;
-    transition: transform 0.3s ;
+    transition: transform 0.3s;
 
+}
+.pointer-left{
+    background-color: blueviolet;
+    position: absolute;
+    left: 20px;
+    transform: translateX(-50%);
+    
+}
+.pointer-right{
+    background-color: rgb(41, 37, 120);
+    position: absolute;
+    right: 20px;
+    transform: translateX(50%);
 }
 
 .standout {
