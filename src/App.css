@@ -36,26 +36,21 @@
 }
 
 .a-pointer{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+    display: none;
+    position:absolute;
+    width: 40px;
+    height: 40px;
     margin-top: 10px;
     transition: transform 0.3s;
 
 }
 .pointer-left{
     background-color: blueviolet;
-    position: absolute;
-    left: 20px;
-    transform: translateX(-50%);
-    
+    /* transform: translateX(-50%); */
 }
 .pointer-right{
     background-color: rgb(41, 37, 120);
-    position: absolute;
-    right: 20px;
-    transform: translateX(50%);
+    
 }
 
 .standout {
