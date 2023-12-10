@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { bubbleSort } from "../../Algorithms/SortingAlgorithms/bubbleSort";
+// import { bubbleSort } from "../../Algorithms/SortingAlgorithms/bubbleSort";
+import { animateSwap } from "../../Animations/Animations";
 
 export const Sorting = () => {
   const [length, setLength] = useState<number>(0);
   const [algorithm, setAlgorithm] = useState<string>("0");
-  const [array, setArray] = useState<number[]>([40, 74, 4]);
-
+  const [array, setArray] = useState<number[]>([]);
   const handleChange = (e: any) => {
     setLength(e.target.value);
   };
@@ -16,10 +16,10 @@ export const Sorting = () => {
   const triggerAlgorithm = () => {
     switch (algorithm) {
       case "0":
-        // bubbleSort(array);
-        console.log(bubbleSort(array));
+        bubbleSort(array);
     }
   };
+
   useEffect(() => {
     function generateRandomArray(length: number): number[] {
       const randomArray: number[] = [];
@@ -31,6 +31,29 @@ export const Sorting = () => {
     }
     setArray(generateRandomArray(length));
   }, [length]);
+
+  const bubbleSort = async (arr: number[]) => {
+    let len = arr.length - 1;
+
+    for (let i = 0; i < len; i++) {
+      for (let j = 0; j < len - i; j++) {
+        if (arr[j] > arr[j + 1]) {
+          await new Promise((resolve: any) => {
+            setTimeout(() => {
+              resolve();
+            }, 1020);
+          });
+          await animateSwap(j, j + 1);
+          let temp = arr[j + 1];
+          arr[j + 1] = arr[j];
+          arr[j] = temp;
+          setArray([...arr]);
+        }
+      }
+    }
+    return arr;
+  };
+
   return (
     <div className="container">
       <section className="container-navigation">
