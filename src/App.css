@@ -57,7 +57,9 @@
     position: relative;
     animation: standout 0.3s forwards ease-in;
 }
-
+.a-swap-animation {
+    animation: swapanimation 1000ms forwards ease-in;
+}
 
 
 @keyframes standout {
@@ -77,3 +79,4 @@
         transform: translateX(40px);
     }
 }
+

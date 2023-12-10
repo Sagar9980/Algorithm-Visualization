@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
+import { bubbleSort } from "../../Algorithms/SortingAlgorithms/bubbleSort";
 
 export const Sorting = () => {
   const [length, setLength] = useState<number>(0);
   const [algorithm, setAlgorithm] = useState<string>("0");
   const [array, setArray] = useState<number[]>([]);
-
   const handleChange = (e: any) => {
     setLength(e.target.value);
   };
   const handleChangeAlgorithm = (e: any) => {
     setAlgorithm(e.target.value);
   };
+  const updateArray = (arr: number[]) => {
+    setArray([...arr]);
+  };
 
   const triggerAlgorithm = () => {
-    console.log("algo");
+    switch (algorithm) {
+      case "0":
+        bubbleSort(array, updateArray);
+    }
   };
+
   useEffect(() => {
     function generateRandomArray(length: number): number[] {
       const randomArray: number[] = [];
@@ -26,6 +33,7 @@ export const Sorting = () => {
     }
     setArray(generateRandomArray(length));
   }, [length]);
+
   return (
     <div className="container">
       <section className="container-navigation">
