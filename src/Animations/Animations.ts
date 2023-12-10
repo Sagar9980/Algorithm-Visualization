@@ -9,52 +9,9 @@ export const animateResultElement = (i: number) => {
   arrayElement.className = "a-box standout";
 };
 
-// export const animateSwap = (i: number, j: number) => {
-//   const arrayElementI: any = document.getElementById(`a-box-${i}`);
-//   const arrayElementJ: any = document.getElementById(`a-box-${j}`);
-
-//   const animationF = document.createElement("style");
-//   animationF.innerHTML = `
-//   @keyframes forwardSwap {
-//     0% {
-//         transform: translate(0px, 0px);
-//     }
-//     33% {
-//         transform: translate(0px, -60px);
-//     }
-//     66% {
-//         transform: translate(40px, -60px);
-//     }
-//     100% {
-//         transform: translate(40px, 0px);
-//     }
-// }
-//   `;
-//   const animationB = document.createElement("style");
-//   animationB.innerHTML = `
-//   @keyframes backwardSwap {
-//     0% {
-//         transform: translate(0px, 0px);
-//     }
-//     33% {
-//         transform: translate(0px, -60px);
-//     }
-//     66% {
-//         transform: translate(-40px, -60px);
-//     }
-//     100% {
-//         transform: translate(-40px, 0px);
-//     }
-// }
-//   `;
-//   document.head.appendChild(animationF);
-//   arrayElementI.style.animation = "forwardSwap  5000ms  0ms ease-in";
-//   document.head.appendChild(animationB);
-//   arrayElementJ.style.animation = "backwardSwap  5000ms  0ms ease-in";
-// };
-
 export const animateSwap = async (i: number, j: number): Promise<void> => {
   return new Promise((resolve) => {
+    const d = (j - i) * 40;
     const arrayElementI: any = document.getElementById(`a-box-${i}`);
     const arrayElementJ: any = document.getElementById(`a-box-${j}`);
 
@@ -68,10 +25,10 @@ export const animateSwap = async (i: number, j: number): Promise<void> => {
           transform: translate(0px, -60px);
         }
         66% {
-          transform: translate(40px, -60px);
+          transform: translate( ${d}px, -60px);
         }
         100% {
-          transform: translate(40px, 0px);
+          transform: translate(${d}px, 0px);
         }
       }
     `;
@@ -86,10 +43,10 @@ export const animateSwap = async (i: number, j: number): Promise<void> => {
           transform: translate(0px, -60px);
         }
         66% {
-          transform: translate(-40px, -60px);
+          transform: translate(-${d}px, -60px);
         }
         100% {
-          transform: translate(-40px, 0px);
+          transform: translate(-${d}px, 0px);
         }
       }
     `;
@@ -103,8 +60,8 @@ export const animateSwap = async (i: number, j: number): Promise<void> => {
     document.head.appendChild(animationB);
 
     // Apply the animations to the elements
-    arrayElementI.style.animation = "forwardSwap forwards 1000ms ease-in";
-    arrayElementJ.style.animation = "backwardSwap forwards 1000ms ease-in";
+    arrayElementI.style.animation = "forwardSwap forwards 950ms ease-in-out";
+    arrayElementJ.style.animation = "backwardSwap forwards 950ms ease-in-out";
 
     function onAnimationEnd() {
       // Remove event listeners
