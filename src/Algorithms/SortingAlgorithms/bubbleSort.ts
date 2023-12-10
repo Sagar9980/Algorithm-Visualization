@@ -8,9 +8,10 @@ export const bubbleSort = async (arr: number[], updateArray: any) => {
         await new Promise((resolve: any) => {
           setTimeout(() => {
             resolve();
-          }, 1020);
+          }, 1000);
         });
         await animateSwap(j, j + 1);
+
         let temp = arr[j + 1];
         arr[j + 1] = arr[j];
         arr[j] = temp;
