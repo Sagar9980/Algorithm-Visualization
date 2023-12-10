@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { bubbleSort } from "../../Algorithms/SortingAlgorithms/bubbleSort";
+import { selectionSort } from "../../Algorithms/SortingAlgorithms/selectionSort";
 
 export const Sorting = () => {
   const [length, setLength] = useState<number>(0);
@@ -19,6 +20,9 @@ export const Sorting = () => {
     switch (algorithm) {
       case "0":
         bubbleSort(array, updateArray);
+        break;
+      case "1":
+        selectionSort(array, updateArray);
     }
   };
 
