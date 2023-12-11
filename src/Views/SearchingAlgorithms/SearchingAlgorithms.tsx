@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { binarySearch } from "../../Algorithms/SearchingAlgorithms/binarySearch";
 import { linearSearch } from "../../Algorithms/SearchingAlgorithms/linearSearch";
+import "../../App.css";
 
 function SearchingAlgorithms() {
   const [length, setLength] = useState<number>(0);
@@ -45,22 +46,29 @@ function SearchingAlgorithms() {
 
   return (
     <div className="container">
-      <section className="container-navigation">
-        <div>
-          <label>Enter the length of Array: </label>
-          <input type="number" onChange={handleChange} max="20" min="5" />
+      <section className="container-navigation-wrapper">
+        <div className="container-navigation">
+          <select
+            className="dropdown-search"
+            onChange={handleChangeAlgorithm}
+            defaultValue={0}
+          >
+            <option value="0">Linear Search</option>
+            <option value="1">Binary Search</option>
+          </select>
+          <div>
+            <label>Length of Array: </label>
+            <input type="number" onChange={handleChange} max="20" min="5" />
+          </div>
+          <div>
+            <label>Enter number to search: </label>
+            <input type="number" onChange={handleKeyChange} />
+          </div>
+          <button className="secondary-button">Reset</button>
+          <button className="primary-button" onClick={triggerAlgorithm}>
+            Search
+          </button>
         </div>
-        <select onChange={handleChangeAlgorithm} defaultValue={0}>
-          <option value="0">Linear Search</option>
-          <option value="1">Binary Search</option>
-        </select>
-        <div>
-          <label>Enter number to search: </label>
-          <input type="number" onChange={handleKeyChange} />
-        </div>
-        <button className="primary-button" onClick={triggerAlgorithm}>
-          Search
-        </button>
       </section>
 
       <section className="container-content">
