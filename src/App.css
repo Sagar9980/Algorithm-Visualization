@@ -1,82 +1,164 @@
-.container{
-    height: 100vh;
+.container {
+  height: 100vh;
 }
-.container-navigation{
-    height: 10%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+.container-navigation-wrapper {
+  display: flex;
+  justify-content: center;
 }
-.container-content{
-    height: 90%;
-    display: grid;
-    place-items: center;
+.container-navigation {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
-.a-box{
-    width: 40px;
-    height: 40px;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--primary-color);
-    color: white;
-    font-weight: 800;
-    display: inline-block;
-    text-align: center;
-    line-height: 40px;
-   
+.container-content {
+  height: 90%;
+  display: grid;
+  place-items: center;
 }
-
-
-
-
-
-
-
-.pointer-container{
-    position: relative;
+.a-box {
+  width: 40px;
+  height: 40px;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  color: white;
+  font-weight: 800;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
 }
 
-.a-pointer{
-    display: none;
-    position:absolute;
-    width: 40px;
-    height: 40px;
-    margin-top: 10px;
-    transition: transform 0.3s;
+.pointer-container {
+  position: relative;
+}
 
+.a-pointer {
+  display: none;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin-top: 10px;
+  transition: transform 0.3s;
 }
-.pointer-left{
-    background-color: blueviolet;
-    /* transform: translateX(-50%); */
+.pointer-left {
+  background-color: blueviolet;
+  /* transform: translateX(-50%); */
 }
-.pointer-right{
-    background-color: rgb(41, 37, 120);
-    
+.pointer-right {
+  background-color: rgb(41, 37, 120);
 }
 
 .standout {
-    position: relative;
-    animation: standout 0.3s forwards ease-in;
+  position: relative;
+  animation: standout 0.3s forwards ease-in;
 }
 .a-swap-animation {
-    animation: swapanimation 1000ms forwards ease-in;
+  animation: swapanimation 1000ms forwards ease-in;
 }
 
-
 @keyframes standout {
-    from{
-        transform: translate(0px, 0px);
-    }
-    to {
-        transform: translate(0px , -70px);
-    }
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(0px, -70px);
+  }
 }
 
 @keyframes traverse {
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(40px);
-    }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(40px);
+  }
 }
 
+.dropdown-search {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1.5px solid var(--primary-color);
+}
+
+.container-navigation {
+  width: fit-content;
+  gap: 25px;
+  padding: 15px 25px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background: #f4f4f4;
+  box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.container-navigation label {
+  font-family: poppins;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.container-navigation input {
+  width: 60px;
+  height: 40px;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.primary-button {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  cursor: pointer;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 33px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 0px;
+  width: 120px;
+}
+.primary-button-disabled {
+  cursor: not-allowed;
+  background: var(--body-text-color);
+}
+
+.secondary-button {
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 33px;
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 10px;
+  padding: 5px 0px;
+  width: 120px;
+}
+
+.dropdown-search option {
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 5px 10px;
+  border: 2px solid var(--Primary, #fd5901);
+  opacity: 0.8;
+  background: #d9d9d9;
+}

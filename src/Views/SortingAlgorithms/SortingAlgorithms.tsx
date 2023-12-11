@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { bubbleSort } from "../../Algorithms/SortingAlgorithms/bubbleSort";
 import { selectionSort } from "../../Algorithms/SortingAlgorithms/selectionSort";
+import { ToastContainer, toast } from "react-toastify";
 
 export const Sorting = () => {
   const [length, setLength] = useState<number>(0);
   const [algorithm, setAlgorithm] = useState<string>("0");
   const [array, setArray] = useState<number[]>([]);
+  const [disabled, setDisabled] = useState<boolean>(false);
   const handleChange = (e: any) => {
-    setLength(e.target.value);
+    if (e.target.value > 20) {
+      toast.error("Please enter value less than 20.");
+    } else {
+      setLength(e.target.value);
+    }
   };
   const handleChangeAlgorithm = (e: any) => {
     setAlgorithm(e.target.value);
@@ -17,6 +23,7 @@ export const Sorting = () => {
   };
 
   const triggerAlgorithm = () => {
+    setDisabled(true);
     switch (algorithm) {
       case "0":
         bubbleSort(array, updateArray);
@@ -40,21 +47,39 @@ export const Sorting = () => {
 
   return (
     <div className="container">
-      <section className="container-navigation">
-        <div>
-          <label>Enter the length of Array: </label>
-          <input type="number" onChange={handleChange} max="20" min="5" />
-        </div>
-        <select onChange={handleChangeAlgorithm} defaultValue={0}>
-          <option value="0">BubbleSort</option>
-          <option value="1">Selection Sort</option>
-          <option value="2">Quick Sort</option>
-          <option value="3">Merge Sort</option>
-        </select>
-        <button className="primary-button" onClick={triggerAlgorithm}>
-          Sort
-        </button>
-      </section>
+      <div className="container-navigation-wrapper">
+        <section className="container-navigation">
+          <select
+            className="dropdown-search"
+            onChange={handleChangeAlgorithm}
+            defaultValue={0}
+          >
+            <option value="0">BubbleSort</option>
+            <option value="1">Selection Sort</option>
+            <option value="2">Quick Sort</option>
+            <option value="3">Merge Sort</option>
+          </select>
+          <div>
+            <label>Enter the length of Array: </label>
+            <input type="number" onChange={handleChange} max="20" min="5" />
+          </div>
+          <button
+            className="secondary-button"
+            onClick={() => location.reload()}
+          >
+            Reset
+          </button>
+          <button
+            className={`primary-button ${
+              disabled ? "primary-button-disabled" : ""
+            }`}
+            onClick={triggerAlgorithm}
+            disabled={disabled}
+          >
+            Sort
+          </button>
+        </section>
+      </div>
 
       <section className="container-content">
         <div className="array-container">
@@ -83,6 +108,18 @@ export const Sorting = () => {
           </div>
         </div>
       </section>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };
