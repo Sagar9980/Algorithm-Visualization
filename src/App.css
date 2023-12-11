@@ -121,6 +121,7 @@ input::-webkit-inner-spin-button {
   color: #fff;
   text-align: center;
   font-family: Poppins;
+  cursor: pointer;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -130,6 +131,10 @@ input::-webkit-inner-spin-button {
   border-radius: 10px;
   padding: 5px 0px;
   width: 120px;
+}
+.primary-button-disabled {
+  cursor: not-allowed;
+  background: var(--body-text-color);
 }
 
 .secondary-button {
