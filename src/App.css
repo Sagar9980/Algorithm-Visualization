@@ -28,6 +28,10 @@
   text-align: center;
   line-height: 40px;
 }
+.invert-array-color{
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+}
 
 .pointer-container {
   position: relative;
