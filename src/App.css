@@ -13,9 +13,9 @@
   margin-top: 20px;
 }
 .container-content {
-  height: 90%;
   display: grid;
   place-items: center;
+  margin-top: 10px;
 }
 .a-box {
   width: 40px;
@@ -166,3 +166,19 @@ input::-webkit-inner-spin-button {
   opacity: 0.8;
   background: #d9d9d9;
 }
+
+
+
+
+/* pathfinding css */
+table{
+  border-collapse: collapse;
+}
+ th, td{
+  border: 1.5px solid var(--secondary-color)
+}
+td {
+  width: 25px;
+  height: 25px
+}
+
