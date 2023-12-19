@@ -8,8 +8,8 @@ import { animateDijkstra } from "../../Animations/Animations";
 
 const START_NODE_ROW = 10;
 const START_NODE_COL = 15;
-const FINISH_NODE_ROW = 10;
-const FINISH_NODE_COL = 35;
+const FINISH_NODE_ROW = 2;
+const FINISH_NODE_COL = 48;
 
 const PathfindingAlgorithms = () => {
   const [grid, setGrid] = useState<any>([]);

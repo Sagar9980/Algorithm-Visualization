@@ -104,20 +104,19 @@ export const animateDijkstra = (
       const visitedNode: any = document.getElementById(
         `node-${node.row}-${node.col}`
       );
-      visitedNode.className = "node node-visited";
+      visitedNode.classList.add("node-visited");
     }, 10 * i);
   }
 };
 
 const animateShortestPath = (nodesInShortestPathOrder) => {
-  console.log(nodesInShortestPathOrder, "hello");
   for (let i = 0; i < nodesInShortestPathOrder.length; i++) {
     setTimeout(() => {
       const node = nodesInShortestPathOrder[i];
       const shortestNodes: any = document.getElementById(
         `node-${node.row}-${node.col}`
       );
-      shortestNodes.className = "node node-shortest-path";
+      shortestNodes.classList.add("node-shortest-path");
     }, 50 * i);
   }
 };

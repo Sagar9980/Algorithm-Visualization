@@ -4,11 +4,17 @@
 }
 
 .node-finish {
-    background-color: red;
+   background-image: url(/fluent_location-28-filled.png);
+   z-index: 10;
+   background-position: center;
+   background-size: 90%;
   }
   
   .node-start {
-    background-color: blue;
+    background-image: url(/bxs_right-arrow.png);
+    background-position: center;
+    z-index: 10;
+    background-size: 90%;
   }
 
 .node-wall {
@@ -30,22 +36,22 @@
 @keyframes visitedAnimation {
     0% {
       transform: scale(0.3);
-      background-color: #FFA33F;
+      background-color: #05979e;
       border-radius: 100%;
     }
   
     50% {
-      background-color: #F78914;
+      background-color: #06ffe6;
     }
   
     75% {
       transform: scale(1.2);
-      background-color: #337357;
+      background-color: #f39735;
     }
   
     100% {
       transform: scale(1);
-      background-color: #6D9F71;
+      background-color: #f8b773;
     }
   }
 
@@ -63,16 +69,16 @@
   @keyframes shortestPath {
     0% {
       transform: scale(0.6);
-      background-color: #FFA33F;
+      background-color: #0f4d00;
     }
   
     50% {
       transform: scale(1.2);
-      background-color: #F78914;
+      background-color: #073f04;
     }
   
     100% {
       transform: scale(1);
-      background-color: var(--primary-color);
+      background-color: #05979e;
     }
   }
