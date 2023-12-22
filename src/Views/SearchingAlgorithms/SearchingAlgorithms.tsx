@@ -39,7 +39,13 @@ function SearchingAlgorithms() {
         }
       });
     } else {
-      binarySearch(array, key, 0, array.length - 1);
+      binarySearch(array, key, 0, array.length - 1).then((index: number) => {
+        if (index === -1) {
+          fail();
+        } else {
+          success();
+        }
+      });
     }
   };
 
@@ -107,19 +113,16 @@ function SearchingAlgorithms() {
             ))}
           <div className="pointer-container">
             {array?.length > 0 && (
-              <span id="a-pointer-lb" className="a-pointer pointer-left">
-                lb
-              </span>
+              <span id="a-pointer-lb" className="a-pointer pointer-left"></span>
             )}
             {algorithm === "1" && (
-              <span id="a-pointer-mid" className="a-pointer pointer-mid">
-                mid
-              </span>
+              <span id="a-pointer-mid" className="a-pointer pointer-mid"></span>
             )}
             {algorithm === "1" && array?.length > 1 && (
-              <span id="a-pointer-ub" className="a-pointer pointer-right">
-                ub
-              </span>
+              <span
+                id="a-pointer-ub"
+                className="a-pointer pointer-right"
+              ></span>
             )}
           </div>
         </div>
