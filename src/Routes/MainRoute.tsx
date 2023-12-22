@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import React from "react";
 import Home from "../Views/Homepage/Homepage";
 import Sorting from "../Views/SortingAlgorithms/SortingAlgorithms";
-import Pathfind from "../Views/PathfindingAlgorithms/PathfindingAlgorithms";
 import SearchingAlgorithms from "../Views/SearchingAlgorithms/SearchingAlgorithms";
+import PathfindingAlgorithms from "../Views/PathfindingAlgorithms/PathfindingAlgorithms";
 
 export const MainRoute = createBrowserRouter([
   {
@@ -12,7 +12,7 @@ export const MainRoute = createBrowserRouter([
   },
   {
     path: "/pathfind",
-    element: <Pathfind />,
+    element: <PathfindingAlgorithms />,
   },
   {
     path: "/sorting",
@@ -25,5 +25,3 @@ export const MainRoute = createBrowserRouter([
 ]);
 
 export default MainRoute;
-
-
