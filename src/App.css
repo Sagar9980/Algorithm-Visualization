@@ -16,6 +16,7 @@
   display: grid;
   place-items: center;
   margin-top: 10px;
+  height: 80%;
 }
 .a-box {
   width: 40px;
