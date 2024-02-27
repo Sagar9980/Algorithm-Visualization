@@ -54,14 +54,20 @@ export const Sorting = () => {
             onChange={handleChangeAlgorithm}
             defaultValue={0}
           >
-            <option value="0">BubbleSort</option>
+            <option value="0">Bubble Sort</option>
             <option value="1">Selection Sort</option>
             <option value="2">Quick Sort</option>
             <option value="3">Merge Sort</option>
           </select>
           <div>
             <label>Enter the length of Array: </label>
-            <input type="number" onChange={handleChange} max="20" min="5" />
+            <input
+              data-test-id="array-length"
+              type="number"
+              onChange={handleChange}
+              max="20"
+              min="5"
+            />
           </div>
           <button
             className="secondary-button"
