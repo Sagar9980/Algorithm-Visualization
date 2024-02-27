@@ -16,11 +16,11 @@ export const binarySearch = async (
     setTimeout(() => {
       if (ub >= lb) {
         let mid = Math.floor((lb + ub) / 2);
-        // animatePointers("a-pointer-lb", lb);
-        // animatePointers("a-pointer-mid", mid);
-        // animatePointers("a-pointer-ub", ub);
+        animatePointers("a-pointer-lb", lb);
+        animatePointers("a-pointer-mid", mid);
+        animatePointers("a-pointer-ub", ub);
         if (checkEquality(arr[mid], k)) {
-          // animateResultElement(mid);
+          animateResultElement(mid);
           index = mid;
           resolve(mid);
           return mid;
@@ -38,7 +38,3 @@ export const binarySearch = async (
   });
   return index;
 };
-const array = [24, 54, 22, 54, 73, 54];
-binarySearch(array, "54", 0, 5).then((index) => {
-  console.log(index);
-});

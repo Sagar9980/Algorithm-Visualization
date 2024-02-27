@@ -79,11 +79,21 @@ function SearchingAlgorithms() {
           </select>
           <div>
             <label>Length of Array: </label>
-            <input type="number" onChange={handleChange} max="20" min="5" />
+            <input
+              data-test-id="array-length"
+              type="number"
+              onChange={handleChange}
+              max="20"
+              min="5"
+            />
           </div>
           <div>
             <label>Enter number to search: </label>
-            <input type="number" onChange={handleKeyChange} />
+            <input
+              data-test-id="array-key"
+              type="number"
+              onChange={handleKeyChange}
+            />
           </div>
           <button
             className="secondary-button"
