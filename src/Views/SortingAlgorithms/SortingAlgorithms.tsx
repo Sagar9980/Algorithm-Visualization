@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { bubbleSort } from "../../Algorithms/SortingAlgorithms/bubbleSort";
 import { selectionSort } from "../../Algorithms/SortingAlgorithms/selectionSort";
 import { ToastContainer, toast } from "react-toastify";
+import { mergeSortAlgorithm } from "../../Algorithms/SortingAlgorithms/mergeSort";
 
 export const Sorting = () => {
   const [length, setLength] = useState<number>(0);
@@ -30,6 +31,10 @@ export const Sorting = () => {
         break;
       case "1":
         selectionSort(array, updateArray);
+        break;
+      case "3":
+        console.log(mergeSortAlgorithm(array, updateArray));
+        break;
     }
   };
 
