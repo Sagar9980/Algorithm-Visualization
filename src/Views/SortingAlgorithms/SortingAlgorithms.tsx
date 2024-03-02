@@ -61,7 +61,7 @@ export const Sorting = () => {
           <select
             className="dropdown-search"
             onChange={handleChangeAlgorithm}
-            defaultValue={0}
+            defaultValue={3}
           >
             <option value="0">Bubble Sort</option>
             <option value="1">Selection Sort</option>
@@ -97,29 +97,30 @@ export const Sorting = () => {
       </div>
 
       <section className="container-content">
-        <div className="array-container">
-          {array &&
-            array.map((item, index) => (
-              <span key={index} id={`a-box-${index}`} className="a-box">
-                {item}
-              </span>
-            ))}
-          <div className="pointer-container">
-            {array?.length > 0 && (
-              <span id="a-pointer-lb" className="a-pointer pointer-left">
-                lb
-              </span>
-            )}
-            {algorithm === "1" && (
-              <span id="a-pointer-mid" className="a-pointer pointer-mid">
-                mid
-              </span>
-            )}
-            {algorithm === "1" && array?.length > 1 && (
-              <span id="a-pointer-ub" className="a-pointer pointer-right">
-                ub
-              </span>
-            )}
+        <div>
+          <div className="array-container">
+            {array &&
+              array.map((item, index) => (
+                <span key={index} id={`a-box-${index}`} className="a-box">
+                  {item}
+                </span>
+              ))}
+          </div>
+          {array.length > 0 && (
+            <div>
+              <h3 style={{ marginTop: 40, marginBottom: 20 }}>Sorted Array:</h3>
+            </div>
+          )}
+          <div className="additional-array">
+            {algorithm === "3" &&
+              array &&
+              array.map((item, index) => (
+                <div
+                  key={index}
+                  id={`a-empty-box-${index}`}
+                  className="a-box-empty"
+                ></div>
+              ))}
           </div>
         </div>
       </section>

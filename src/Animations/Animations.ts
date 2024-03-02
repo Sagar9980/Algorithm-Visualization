@@ -22,6 +22,14 @@ export const splitArray = async (i: number) => {
     resolve();
   });
 };
+
+export const fillArray = (i: number, value: number) => {
+  const arrayElement: any = document.getElementById(`a-empty-box-${i}`);
+  if (arrayElement) {
+    arrayElement.textContent = value.toString();
+    arrayElement.className = "a-box";
+  }
+};
 export const animateSwap = async (i: number, j: number): Promise<void> => {
   return new Promise((resolve) => {
     const d = (j - i) * 40;
