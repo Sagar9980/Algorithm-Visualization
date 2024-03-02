@@ -61,7 +61,7 @@ export const Sorting = () => {
           <select
             className="dropdown-search"
             onChange={handleChangeAlgorithm}
-            defaultValue={3}
+            defaultValue={0}
           >
             <option value="0">Bubble Sort</option>
             <option value="1">Selection Sort</option>
@@ -106,14 +106,13 @@ export const Sorting = () => {
                 </span>
               ))}
           </div>
-          {array.length > 0 && (
+          {array.length > 0 && algorithm === "3" && (
             <div>
               <h3 style={{ marginTop: 40, marginBottom: 20 }}>Sorted Array:</h3>
             </div>
           )}
           <div className="additional-array">
             {algorithm === "3" &&
-              array &&
               array.map((item, index) => (
                 <div
                   key={index}
