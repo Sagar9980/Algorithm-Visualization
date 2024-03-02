@@ -12,63 +12,59 @@ const PathfindingAlgorithms = () => {
   const [startNode, setstartNode] = useState([10, 15]);
   const [finishNode, setfinishNode] = useState([2, 48]);
   const [mouseDown, setMouseDown] = useState(false);
-  const [onMouseDouleClick, setMouseDoubleClick] = useState<number>()
+  const [onMouseDouleClick, setMouseDoubleClick] = useState<number>();
   const handleChangeAlgorithm = (e: any) => {
     setAlgorithm(e.target.value);
   };
-  //   console.log(grid);
   const triggerAlgorithm = () => {
     const stNode = grid[startNode[0]][startNode[1]];
     const fshNode = grid[finishNode[0]][finishNode[1]];
     const visitedNodesInOrder = dijkstraAlgorithm(grid, stNode, fshNode);
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(fshNode);
-    
+
     animateDijkstra(visitedNodesInOrder, nodesInShortestPathOrder);
   };
   const handleMouseDown = (row: number, col: number) => {
-   
-  const node = grid[row][col];
-  if (node?.isStart) {
-    setMouseDoubleClick(0);
-    return;
-  }
-  if(node?.isFinish){
-    setMouseDoubleClick(1);
-    return
-  }
+    const node = grid[row][col];
+    if (node?.isStart) {
+      setMouseDoubleClick(0);
+      return;
+    }
+    if (node?.isFinish) {
+      setMouseDoubleClick(1);
+      return;
+    }
     const newGrid = getNewGridWithWallToggled(grid, row, col);
     setGrid(newGrid);
     setMouseDown(true);
-   
   };
-  const handleMouseEnter =(row:number, col: number) => {
-    if(!mouseDown) return;
+  const handleMouseEnter = (row: number, col: number) => {
+    if (!mouseDown) return;
     const newGrid = getNewGridWithWallToggled(grid, row, col);
     setGrid(newGrid);
-  }
-  const handleMouseUp = (row:number, col: number) => {
-    if(onMouseDouleClick === 0) {
+  };
+  const handleMouseUp = (row: number, col: number) => {
+    if (onMouseDouleClick === 0) {
       setstartNode([row, col]);
-      setMouseDoubleClick(2)
+      setMouseDoubleClick(2);
     }
-    if(onMouseDouleClick ===1 ) {
-      setfinishNode([row, col])
-      setMouseDoubleClick(2)
+    if (onMouseDouleClick === 1) {
+      setfinishNode([row, col]);
+      setMouseDoubleClick(2);
     }
-    setMouseDown(false)
+    setMouseDown(false);
   };
 
- const getNewGridWithWallToggled = (grid, row, col) => {
-  const newGrid = grid.slice();
-  const node = newGrid[row][col];
-  const newNode = {
-    ...node, 
-    isWall: node.isStart || node.isFinish ? false : !node.isWall,
-  }
-  newGrid[row][col] = newNode;
-  return newGrid;
- }
-
+  const getNewGridWithWallToggled = (grid, row, col) => {
+    const newGrid = grid.slice();
+    const node = newGrid[row][col];
+    const newNode = {
+      ...node,
+      isWall: node.isStart || node.isFinish ? false : !node.isWall,
+    };
+    newGrid[row][col] = newNode;
+    return newGrid;
+  };
 
   useEffect(() => {
     const createNode = (row: number, col: number) => {
@@ -107,7 +103,6 @@ const PathfindingAlgorithms = () => {
             defaultValue={0}
           >
             <option value="0">Dijkstra's Algorithm</option>
-            <option value="1">A* Search Algorithm</option>
           </select>
 
           <button
@@ -144,7 +139,7 @@ const PathfindingAlgorithms = () => {
                         isStart={isStart}
                         isFinish={isFinish}
                         onMouseDown={handleMouseDown}
-                        onMouseEnter={ handleMouseEnter}
+                        onMouseEnter={handleMouseEnter}
                         onMouseUp={handleMouseUp}
                       />
                     </td>

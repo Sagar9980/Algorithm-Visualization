@@ -1,18 +1,22 @@
+.nav {
+  margin: 30px 0px;
+}
 .top-nav a {
   text-decoration: none;
   color: var(--primary-color, #fd5901);
   font-family: Poppins;
-  font-size: 30px;
+  font-size: 50px;
+  margin: 20px;
   font-style: normal;
   font-weight: 1000;
   line-height: 33px; /* 110% */
 }
-.links{
+.links {
   text-decoration: none;
 }
 .top-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px;
 }
