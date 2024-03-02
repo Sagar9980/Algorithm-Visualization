@@ -10,6 +10,8 @@ export interface NodeProps {
   onMouseUp: any;
   onMouseDown: any;
   onMouseEnter: any;
+  distance?: any;
+  isVisited?: boolean;
 }
 
 const Node = ({

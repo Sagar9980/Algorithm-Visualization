@@ -11,8 +11,7 @@ export const binarySearch = async (
   ub: number,
   recursionDepth: number = 0
 ) => {
-  let index = -1;
-  await new Promise((resolve: any) => {
+  return new Promise<number>((resolve: any) => {
     setTimeout(() => {
       if (ub >= lb) {
         let mid = Math.floor((lb + ub) / 2);
@@ -21,20 +20,19 @@ export const binarySearch = async (
         animatePointers("a-pointer-ub", ub);
         if (checkEquality(arr[mid], k)) {
           animateResultElement(mid);
-          index = mid;
           resolve(mid);
-          return mid;
+        } else if (arr[mid] > parseInt(k)) {
+          binarySearch(arr, k, lb, mid - 1, recursionDepth + 1).then((result) =>
+            resolve(result)
+          );
+        } else {
+          binarySearch(arr, k, mid + 1, ub, recursionDepth + 1).then((result) =>
+            resolve(result)
+          );
         }
-        if (arr[mid] > parseInt(k)) {
-          return binarySearch(arr, k, lb, mid - 1, recursionDepth + 1);
-        } else if (arr[mid] <= parseInt(k))
-          return binarySearch(arr, k, mid + 1, ub, recursionDepth + 1);
-        else {
-          resolve(-1);
-          return -1;
-        }
+      } else {
+        resolve(-1);
       }
     }, 1000 * recursionDepth);
   });
-  return index;
 };

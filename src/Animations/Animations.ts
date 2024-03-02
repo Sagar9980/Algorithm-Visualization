@@ -1,19 +1,35 @@
 export const animatePointers = (pointer: string, pos: number) => {
   const p: any = document.getElementById(pointer);
-  p.style.display = "inline-block";
-  p.style.transform = `translateX(${pos * 40}px)`;
+  if (p) {
+    p.style.display = "inline-block";
+    p.style.transform = `translateX(${pos * 40}px)`;
+  }
 };
 
 export const animateResultElement = (i: number) => {
   const arrayElement: any = document.getElementById(`a-box-${i}`);
-  arrayElement.className = "a-box standout";
+  if (arrayElement) arrayElement.className = "a-box standout";
 };
 
 export const changeSortedColor = (i: number) => {
   const arrayElement: any = document.getElementById(`a-box-${i}`);
   arrayElement.classList.add("invert-array-color");
 };
+export const splitArray = async (i: number) => {
+  return new Promise<void>((resolve, reject) => {
+    const arrayElement: any = document.getElementById(`a-box-${i}`);
+    if (arrayElement) arrayElement.style.marginLeft = "40px";
+    resolve();
+  });
+};
 
+export const fillArray = (i: number, value: number) => {
+  const arrayElement: any = document.getElementById(`a-empty-box-${i}`);
+  if (arrayElement) {
+    arrayElement.textContent = value.toString();
+    arrayElement.className = "a-box";
+  }
+};
 export const animateSwap = async (i: number, j: number): Promise<void> => {
   return new Promise((resolve) => {
     const d = (j - i) * 40;

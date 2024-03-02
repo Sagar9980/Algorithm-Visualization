@@ -32,6 +32,7 @@ function SearchingAlgorithms() {
     setDisabled(true);
     if (algorithm === "0") {
       linearSearch(array, key).then((index: number) => {
+        console.log("runnin");
         if (index === -1) {
           fail();
         } else {
@@ -40,6 +41,7 @@ function SearchingAlgorithms() {
       });
     } else {
       binarySearch(array, key, 0, array.length - 1).then((index: number) => {
+        console.log("this is running");
         if (index === -1) {
           fail();
         } else {
@@ -79,11 +81,21 @@ function SearchingAlgorithms() {
           </select>
           <div>
             <label>Length of Array: </label>
-            <input type="number" onChange={handleChange} max="20" min="5" />
+            <input
+              data-test-id="array-length"
+              type="number"
+              onChange={handleChange}
+              max="20"
+              min="5"
+            />
           </div>
           <div>
             <label>Enter number to search: </label>
-            <input type="number" onChange={handleKeyChange} />
+            <input
+              data-test-id="array-key"
+              type="number"
+              onChange={handleKeyChange}
+            />
           </div>
           <button
             className="secondary-button"

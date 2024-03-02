@@ -1,7 +1,11 @@
 body {
   background-color: #e5f5f5;
 }
-
+.homepage-container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
 .hero-text {
   margin: 20px 0;
 }
@@ -9,7 +13,7 @@ body {
   color: var(--secondary-color);
   text-align: center;
   font-family: Poppins;
-  font-size: 70px;
+  font-size: 40px;
   font-style: normal;
   font-weight: 800;
   line-height: normal;
@@ -18,7 +22,7 @@ body {
 .hero-text p span {
   color: var(--primary-color);
   font-family: Poppins;
-  font-size: 70px;
+  font-size: 50px;
   font-style: normal;
   font-weight: 1000;
   line-height: normal;
@@ -28,10 +32,9 @@ body {
   align-items: center;
   justify-content: center;
 }
-.startbtn,
-.comparebtn {
+.startbtn {
   color: white;
-  background-color: #fd5901;
+  background-color: #005f60;
   border: none;
   height: 45px;
   width: 200px;
@@ -43,7 +46,4 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0px 20px;
-}
-.comparebtn {
-  background-color: #005f60;
 }

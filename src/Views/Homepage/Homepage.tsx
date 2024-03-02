@@ -1,11 +1,12 @@
 import React from "react";
 import "./Homepage.css";
 import Navbar from "../../Components/Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
-    <>
-      <body>
+    <div className="homepage-container">
+      <div>
         <Navbar />
         <div className="hero-text">
           <p>
@@ -15,11 +16,12 @@ export const Home = () => {
           </p>
         </div>
         <div className="btns">
-          <div className="startbtn">Start Visualizing</div>
-          <div className="comparebtn">Compare</div>
+          <Link to="/sorting">
+            <div className="startbtn">Start Visualizing</div>
+          </Link>
         </div>
-      </body>
-    </>
+      </div>
+    </div>
   );
 };
 

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { bubbleSort } from "../../Algorithms/SortingAlgorithms/bubbleSort";
 import { selectionSort } from "../../Algorithms/SortingAlgorithms/selectionSort";
 import { ToastContainer, toast } from "react-toastify";
+import { mergeSortAlgorithm } from "../../Algorithms/SortingAlgorithms/mergeSort";
+import { quickSortAlogorithm } from "../../Algorithms/SortingAlgorithms/quickSort";
 
 export const Sorting = () => {
   const [length, setLength] = useState<number>(0);
@@ -30,6 +32,13 @@ export const Sorting = () => {
         break;
       case "1":
         selectionSort(array, updateArray);
+        break;
+      case "2":
+        console.log(quickSortAlogorithm(array, updateArray));
+        break;
+      case "3":
+        console.log(mergeSortAlgorithm(array, updateArray));
+        break;
     }
   };
 
@@ -54,14 +63,20 @@ export const Sorting = () => {
             onChange={handleChangeAlgorithm}
             defaultValue={0}
           >
-            <option value="0">BubbleSort</option>
+            <option value="0">Bubble Sort</option>
             <option value="1">Selection Sort</option>
             <option value="2">Quick Sort</option>
             <option value="3">Merge Sort</option>
           </select>
           <div>
             <label>Enter the length of Array: </label>
-            <input type="number" onChange={handleChange} max="20" min="5" />
+            <input
+              data-test-id="array-length"
+              type="number"
+              onChange={handleChange}
+              max="20"
+              min="5"
+            />
           </div>
           <button
             className="secondary-button"
@@ -82,29 +97,29 @@ export const Sorting = () => {
       </div>
 
       <section className="container-content">
-        <div className="array-container">
-          {array &&
-            array.map((item, index) => (
-              <span key={index} id={`a-box-${index}`} className="a-box">
-                {item}
-              </span>
-            ))}
-          <div className="pointer-container">
-            {array?.length > 0 && (
-              <span id="a-pointer-lb" className="a-pointer pointer-left">
-                lb
-              </span>
-            )}
-            {algorithm === "1" && (
-              <span id="a-pointer-mid" className="a-pointer pointer-mid">
-                mid
-              </span>
-            )}
-            {algorithm === "1" && array?.length > 1 && (
-              <span id="a-pointer-ub" className="a-pointer pointer-right">
-                ub
-              </span>
-            )}
+        <div>
+          <div className="array-container">
+            {array &&
+              array.map((item, index) => (
+                <span key={index} id={`a-box-${index}`} className="a-box">
+                  {item}
+                </span>
+              ))}
+          </div>
+          {array.length > 0 && algorithm === "3" && (
+            <div>
+              <h3 style={{ marginTop: 40, marginBottom: 20 }}>Sorted Array:</h3>
+            </div>
+          )}
+          <div className="additional-array">
+            {algorithm === "3" &&
+              array.map((item, index) => (
+                <div
+                  key={index}
+                  id={`a-empty-box-${index}`}
+                  className="a-box-empty"
+                ></div>
+              ))}
           </div>
         </div>
       </section>

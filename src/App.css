@@ -28,8 +28,19 @@
   display: inline-block;
   text-align: center;
   line-height: 40px;
+  transition: all 0.7s ease-in;
 }
-.invert-array-color{
+.additional-array {
+  display: flex;
+  align-items: center;
+}
+.a-box-empty {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--primary-color);
+  display: inline-block;
+}
+.invert-array-color {
   background-color: var(--primary-color);
   border: 1px solid var(--secondary-color);
 }
@@ -188,18 +199,15 @@ input::-webkit-inner-spin-button {
   background: #d9d9d9;
 }
 
-
-
-
 /* pathfinding css */
-table{
+table {
   border-collapse: collapse;
 }
- th, td{
-  border: 1.5px solid var(--secondary-color)
+th,
+td {
+  border: 1.5px solid var(--secondary-color);
 }
 td {
   width: 25px;
-  height: 25px
+  height: 25px;
 }
-
